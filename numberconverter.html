@@ -1,0 +1,75 @@
+<html>
+<head>
+<style>
+body
+{
+	background-color: #DBF09E ;
+}
+input[type=text] {
+  width: 50%;
+  padding: 15px;
+  padding-left: 0px;
+  color: red;
+  background-color:#DAF7A6  ;
+  margin-left: 150px;
+  display: inline-block;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+h1
+{
+	color: #3D8505 ;
+	text-align: center;
+}
+h3
+{
+	color: #E45419;
+}
+
+</style>
+</head>
+<body>
+<h1>Number Converter</h1>
+<hr size="10"><br>
+
+<h3>Decimal:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="d1" type="text" oninput="f1()"></h3><br>
+<h3>Hexadecimal:<input id="h1" type="text" oninput="f2()"></h3><br>
+<h3>Binary:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="b1" type="text" oninput="f3()"></h3><br>
+<h3>Octal:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="o1" type="text" oninput="f4()"></h3><br>
+<hr size="10">
+<script>
+	function f1()
+	{
+	   var X1=parseInt(document.getElementById("d1").value);
+	   document.getElementById("h1").value=X1.toString(16);
+	   document.getElementById("b1").value=X1.toString(2);
+	   document.getElementById("o1").value=X1.toString(8);    
+    }
+
+    function f2()
+	{
+	   var X2=parseInt((document.getElementById("h1").value),16);
+	   document.getElementById("d1").value=X2.toString(10);
+	   document.getElementById("b1").value=X2.toString(2);
+	   document.getElementById("o1").value=X2.toString(8);    
+    }
+
+    function f3()
+	{
+	   var X3=parseInt((document.getElementById("b1").value),2);
+	   document.getElementById("h1").value=X3.toString(16);
+	   document.getElementById("d1").value=X3.toString(10);
+	   document.getElementById("o1").value=X3.toString(8);    
+    }
+
+    function f4()
+	{
+	   var X4=parseInt((document.getElementById("o1").value),8);
+	   document.getElementById("h1").value=X4.toString(16);
+	   document.getElementById("d1").value=X4.toString(10);
+	   document.getElementById("b1").value=X4.toString(2);
+    }
+
+</script>
+</body>
+</html>
